@@ -1,7 +1,8 @@
 package com.example.mad03_fragments_and_navigation
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
+import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.navigation.NavController
@@ -16,7 +17,7 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
+        Log.i("MainActivity", "onCreate")
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
 
         drawerLayout = binding.drawerLayout
@@ -31,5 +32,41 @@ class MainActivity : AppCompatActivity() {
 
     override fun onSupportNavigateUp(): Boolean {
         return NavigationUI.navigateUp(navController, drawerLayout)
+    }
+
+    override fun onStart() {
+        super.onStart()
+        Log.i("MainActivity", "onStart")
+
+    }
+
+    override fun onPause() {
+        super.onPause()
+        Log.i("MainActivity", "onPause")
+
+    }
+
+    override fun onResume() {
+        super.onResume()
+        Log.i("MainActivity", "onResume")
+
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        Log.i("MainActivity", "onDestroy")
+
+    }
+
+    override fun onRestart() {
+        super.onRestart()
+        Log.i("MainActivity", "onRestart")
+
+    }
+
+    override fun onStop() {
+        super.onStop()
+        Log.i("MainActivity", "onStop")
+
     }
 }
